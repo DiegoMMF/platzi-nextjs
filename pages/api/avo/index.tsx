@@ -1,9 +1,16 @@
 import { IncomingMessage, ServerResponse } from 'http'
 import DB from '@database'
 
-const allAvos = async (req: IncomingMessage, res: ServerResponse) => res.end(
-    JSON.stringify({ hello: "world" })
-)
+const allAvos = async (req: IncomingMessage, res: ServerResponse) => {
+    const db = new DB()
+    const allEntries = await db.getAll()
+    const length = allEntries.length
+    // lo que sigue debería estar dentro de un catch pero no hace falta ahora
+    // porque estamos usando dummy data
+    res.statusCode = 200
+    res.setHeader('content-type', 'application/json')
+    res.end(JSON.stringify({ length, data: allEntries }))
+}
 
 export default allAvos
 
