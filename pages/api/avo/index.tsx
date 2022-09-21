@@ -10,6 +10,10 @@ const allAvos = async (req: IncomingMessage, res: ServerResponse) => {
     res.statusCode = 200
     res.setHeader('content-type', 'application/json')
     res.end(JSON.stringify({ length, data: allEntries }))
+    // además, las tres líneas anteriores, se podrían resumir en una sola:
+    // res.status(200).json({ length, data: allEntries})
+    // si hubiéramos usado los HTTP helpers de 'next' en lugar de los
+    // módulos IncommingMessage y ServerResponse de 'http' (ver ej debajo)
 }
 
 export default allAvos

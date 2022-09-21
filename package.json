@@ -4,7 +4,8 @@
   "description": "Curso de NextJS dictado por [@jonalvarezz](https://twitter.com/jonalvarezz) para [Platzi](https://platzi.com)",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "dev:debug": "NODE_OPTIONS='--inspect' next"
   },
   "repository": {
     "type": "git",
