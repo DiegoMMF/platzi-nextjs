@@ -4,6 +4,7 @@ import '../global.css'
 
 import CartProvider from '@store/Cart'
 
+// Debemos reiniciar el servidor para poder ver los cambios que hagamos debajo
 const MyApp = ({ Component, pageProps }: AppProps) => {
   // Aditional props
   // Aditional layout
