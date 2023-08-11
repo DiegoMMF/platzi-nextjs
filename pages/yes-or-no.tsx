@@ -16,6 +16,13 @@ const fetchResult = async () => {
   return data
 }
 
+// λ  (Server)  server-side renders at runtime (uses getInitialProps or
+// getServerSideProps) -- sólo pueden utilizarse en las /PAGES
+
+// La diferencia es que esto se ejecuta bajo demanda en el servidor,
+// en lugar de ser pre-renderizado anticipadamente. Puede ser más lento que
+// getStaticProps, pero permite el acceso a datos de solicitud y base de datos
+// en cada solicitud.
 export async function getServerSideProps() {
   const initialResult = await fetchResult()
 
